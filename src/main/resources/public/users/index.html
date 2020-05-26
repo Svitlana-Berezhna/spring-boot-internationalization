@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+</head>
+<body ng-app="users_form" ng-controller="UserCtrl">
+    <p1 data-ng-init="getUsers()">Hello world</p1>
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;
+            overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;
+            border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+        .tg .tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
+        .tg .tg-baqh{text-align:center;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
+    <table class="tg" ng-model="users">
+        <tr>
+            <th class="tg-baqh" colspan="6">"users"</th>
+        </tr>
+        <tr>
+            <td class="tg-hmp3">"id"</td>
+            <td class="tg-hmp3">"first.name"</td>
+            <td class="tg-hmp3">"last.name"</td>
+            <td class="tg-hmp3">"email"</td>
+            <td class="tg-hmp3">"role"</td>
+            <td class="tg-hmp3">"language"</td>
+        </tr>
+        <tr ng-repeat="u in users">
+            <td class="tg-0lax">{{u.id}}</td>
+            <td class="tg-0lax">{{u.firstName}}</td>
+            <td class="tg-0lax">{{u.lang}}</td>
+            <td class="tg-0lax">{{u.lastName}}</td>
+            <td class="tg-0lax">{{u.email}}</td>
+            <td class="tg-0lax">{{u.role}}</td>
+        </tr>
+    </table>
+    <br>
+    <div style="display:inline-block;border:1px solid rgb(108, 109, 121);border-radius:20px;padding:9px;margin-left:350px;
+    background:linear-gradient(to top,rgb(75, 132, 193),rgb(237, 238, 245))">UKR</div>
+    <div style="display:inline-block;border:1px solid rgb(108, 109, 121);border-radius:20px;padding:9px;
+    background:linear-gradient(to top,rgb(75, 132, 193),rgb(237, 238, 245))">ENG</div>
+    <button type="button" width="140px" height="45px" color="#D2E4FC" class="btn btn-default">UKR</button>
+    <button type="button" width="140px" height="45px" color="#524f4e" class="btn btn-primary">ENG</button>
+    <script type="text/javascript" src="../js/users.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{users}"></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+    .btn-group button {
+        background-color: #aabcfe;
+        border: 1px #039;
+        color: white;
+        padding: 10px 24px;
+        cursor: pointer;
+        float: left;
+    }
+    .btn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .btn-group button:not(:last-child) {
+        border-right: none;
+    }
+    .btn-group button:hover {
+        background-color: #039;
+    }
+</style>
+<body ng-app="users_form" ng-controller="UserCtrl">
+<p1 data-ng-init="getUsers()">"#{users}"</p1>
+<h1 th:text="#{users}"></h1>
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;
+        overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;
+        border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+    .tg .tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
+    .tg .tg-baqh{text-align:center;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg" ng-model="users">
+    <tr>
+        <th class="tg-baqh" colspan="6" th:text="#{users}"></th>
+    </tr>
+    <tr>
+        <td class="tg-hmp3" th:text="#{id}"></td>
+        <td class="tg-hmp3" th:text="#{first.name}"></td>
+        <td class="tg-hmp3" th:text="#{last.name}"></td>
+        <td class="tg-hmp3" th:text="#{email}"></td>
+        <td class="tg-hmp3" th:text="#{role}"></td>
+        <td class="tg-hmp3" th:text="#{language}"></td>
+    </tr>
+    <tr ng-repeat="u in users">
+        <td class="tg-0lax">{{u.id}}</td>
+        <td class="tg-0lax">{{u.firstName}}</td>
+        <td class="tg-0lax">{{u.lang}}</td>
+        <td class="tg-0lax">{{u.lastName}}</td>
+        <td class="tg-0lax">{{u.email}}</td>
+        <td class="tg-0lax">{{u.role}}</td>
+    </tr>
+</table>
+<br>
+<h1>Select language</h1>
+<div class="btn-group">
+    <button onclick="window.location.replace('?lang=ua');">UKR</button>
+    <button onclick="window.location.replace('?lang=en');">ENG</button>
+</div>
+<script type="text/javascript" src="../js/users.js"></script>
+</body>
+</html>
